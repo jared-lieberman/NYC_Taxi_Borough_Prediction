@@ -13,4 +13,4 @@ The millions of rides are initially processed in read_in_data.py.
 The exploratory data analysis is performed in exploratory_analysis.py, which
 creates a table with matplotlib.
 
-The action models are created in random_forest_classifier.py.
+The actual models are created in random_forest_classifier.py.
