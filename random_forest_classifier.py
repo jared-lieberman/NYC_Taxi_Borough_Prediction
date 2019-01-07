@@ -132,7 +132,7 @@ def read_in_data():
 
 """
 Name: perform_rfc
-Purpose: This function creates a random forest classifier model on the 
+Purpose: This function creates a random forest model on the 
 appropriate dataset
 """
 def perform_rfc(df, ride_type):
@@ -148,7 +148,7 @@ def perform_rfc(df, ride_type):
 	y = df['BoroughDO']
 	num_features = 3.0
 
-	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.35)
+	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 	# Train random forest classifier
 	param_grid = \
@@ -156,7 +156,7 @@ def perform_rfc(df, ride_type):
 		  'max_features': ["auto", "sqrt", 'log2']}]
 
 	# Create random forest classifier
-	classifier = GridSearchCV(RandomForestClassifier(), param_grid, cv=5)
+	classifier = GridSearchCV(RandomForestClassifier(), param_grid)
 
 	classifier.fit(X_train, y_train)
 
